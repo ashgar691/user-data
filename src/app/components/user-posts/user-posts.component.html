@@ -1,0 +1,17 @@
+<div class="continer">
+
+    <form class="wrap">
+        <div class="search">
+            <input class="searchTerm" type="text" name="searchTerm" placeholder="Search post.." [(ngModel)]="searchTerm"
+                (input)="search($any($event.target).value)" />
+        </div>
+    </form>
+
+    <mat-card *ngFor="let post of allPosts | searchFilter: searchTerm; index as i">
+        <mat-card-title>{{post.title}}</mat-card-title>
+        <mat-card-subtitle>{{post.body}}</mat-card-subtitle>
+        <mat-card-actions>
+            <button (click)="deletePost(post.id)" mat-button color="warn">DELETE</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

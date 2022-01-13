@@ -1,0 +1,25 @@
+<div class="container">
+
+    <mat-card class="card">
+        <mat-card-title-group>
+            <mat-card-title>{{userObj.name}}</mat-card-title>
+        </mat-card-title-group>
+        <mat-card-content>
+            <div>
+                User Name: {{userObj.username}}
+            </div>
+            <div>
+                Phone NUmber: {{userObj.phone}}
+            </div>
+            <div>
+                Email: {{userObj.email}}
+            </div>
+            <div>
+                Address: {{userObj.address?.city +" "+ userObj.address?.street}}
+            </div>
+            <div>
+                Company: {{userObj.company?.name}}
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

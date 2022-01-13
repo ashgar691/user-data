@@ -1,0 +1,19 @@
+<div class="container">
+    <div *ngIf="user$ | async as user">
+        <h1 class="item">{{user.name}}</h1>
+        <div class="item-center">
+            <mat-tab-group mat-align-tabs="end">
+                <mat-tab>
+                    <ng-template mat-tab-label>Posts</ng-template>
+                    <user-posts></user-posts>
+                </mat-tab>
+
+                <mat-tab>
+                    <ng-template mat-tab-label>User's Details</ng-template>
+                    <app-user-deatails [userObj]="user"></app-user-deatails>
+                </mat-tab>
+                <!-- [userPostList]="" -->
+            </mat-tab-group>
+        </div>
+    </div>
+</div>

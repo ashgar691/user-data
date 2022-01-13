@@ -1,0 +1,42 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span>Passport Card - Digital Team Test</span>
+    <span class="example-spacer"></span>
+    <img class="logo" src="/assets/icons/logo.png">
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened">
+        menu
+      </mat-icon>
+      <mat-icon *ngIf="sidenav.opened">
+        close
+      </mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+    <h2>Users List</h2>
+    <mat-divider></mat-divider>
+
+    <div class="Users" *ngFor="let user of users$ | async">
+      <div class="user-btn" (click)="selectUser(user)">
+        <div class="user-header">
+          {{ user.name}}
+        </div>
+        <div>{{ user.username}}</div>
+        <div>{{ user.email}}</div>
+        <div>{{ user.website}}</div>
+      </div>
+      <mat-divider></mat-divider>
+    </div>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
