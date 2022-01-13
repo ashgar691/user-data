@@ -1,6 +1,7 @@
 {
   "name": "user-data",
   "version": "0.0.0",
+  "main": "./",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
