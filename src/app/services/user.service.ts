@@ -11,7 +11,7 @@ import { Post } from '../interfaces/post';
 
 export class UserService {
 
-  URL: string = "http://jsonplaceholder.typicode.com/";
+  URL: string = "https://jsonplaceholder.typicode.com/";
   // private userLists = new BehaviorSubject();
 
   public allUsers: BehaviorSubject<User[]> = new BehaviorSubject<User[]>([]);
@@ -40,7 +40,7 @@ export class UserService {
     })
   }
 
-  deleteUserPost(postId: Number):Observable<any> {
+  deleteUserPost(postId: Number): Observable<any> {
     return this.http.delete(this.URL + 'posts/' + postId);
   }
 }
