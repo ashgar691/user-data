@@ -1,5 +1,5 @@
 <div class="container">
-    <div *ngIf="user$ | async as user">
+    <div *ngIf="user$ | async as user; else loading">
         <h1 class="item">{{user.name}}</h1>
         <div class="item-center">
             <mat-tab-group mat-align-tabs="end">
@@ -16,4 +16,8 @@
             </mat-tab-group>
         </div>
     </div>
+
+    <ng-template #loading>
+       Choose a User..
+      </ng-template>
 </div>
